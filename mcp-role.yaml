@@ -1,0 +1,11 @@
+kind: role
+version: v8
+metadata:
+  name: mcp-user
+spec:
+  allow:
+    app_labels:
+      'teleport.internal/app-sub-kind': 'mcp'
+    mcp:
+      tools:
+      - '*'
