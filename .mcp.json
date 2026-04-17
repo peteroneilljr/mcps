@@ -1,9 +1,3 @@
 {
-  "mcpServers": {
-    "vault": {
-      "type": "stdio",
-      "command": "bash",
-      "args": ["/workspace/mcps/vault-mcp-server/scripts/mcp-start.sh"]
-    }
-  }
+  "mcpServers": {}
 }

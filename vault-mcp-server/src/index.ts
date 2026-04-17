@@ -1,19 +1,9 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { health } from "./vault-client.ts";
 import { config } from "./config.ts";
-import { registerStatusTools } from "./tools/status.ts";
-import { registerSecretTools } from "./tools/secrets.ts";
-import { registerMetadataTools } from "./tools/metadata.ts";
+import { createVaultMcpServer } from "./server.ts";
 
-const server = new McpServer({
-  name: "vault",
-  version: "1.0.0",
-});
-
-registerStatusTools(server);
-registerSecretTools(server);
-registerMetadataTools(server);
+const server = createVaultMcpServer();
 
 // Startup health check — log to stderr, never fail
 async function healthCheck() {

@@ -1,0 +1,9 @@
+kind: app
+version: v3
+metadata:
+  name: vault-mcp
+  labels:
+    env: homelab
+    service: vault
+spec:
+  uri: "mcp+http://127.0.0.1:3100/mcp"
